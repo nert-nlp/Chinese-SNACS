@@ -11,8 +11,11 @@ plt.rcParams['font.sans-serif']=['SimHei']
 plt.rcParams['axes.unicode_minus']=False
 import matplotlib
 from copy import deepcopy
+from pyecharts.charts import Bar
+from pyecharts import options as opts
 
 
+'''
 def draw_bar(df, name):
     matplotlib.style.use('ggplot')
     fig, ax = plt.subplots(figsize=(40, 20))
@@ -27,7 +30,7 @@ def draw_bar(df, name):
 
     SAVE_PATH = ".." + os.sep + "img" + os.sep + f"{name}.png"
     plt.savefig(SAVE_PATH)
-
+    
 
 def preprocess_graph(outer_dict, if_tok_outer=True):
     """
@@ -56,6 +59,36 @@ def preprocess_graph(outer_dict, if_tok_outer=True):
     headers = ['head', 'legend', 'freq']
     df = pd.DataFrame(rows, columns=headers)
     return df
+'''
+
+def draw_bar(x, legends, name):
+    bar = Bar(init_opts={"width":"3000px","height":"600px"})
+    bar.add_xaxis(x)
+    for legend in legends:
+        assert len(legend)-1 == len(x)
+        bar.add_yaxis(legend[0], legend[1:], stack="stack")
+
+    bar.set_global_opts(xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=18, font_size=10)), title_opts=opts.TitleOpts(title=f"X={name}"))
+    bar.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
+
+    SAVE_PATH = ".." + os.sep + "img" + os.sep + f"{name}.html"
+    bar.render(SAVE_PATH)
+    a = 1
+
+
+def preprocess_graph(outer_dict, if_construal_outer=True):
+    x = []
+    legend = []
+    for key,val in outer_dict.items():
+        if if_construal_outer:
+            x = list(val.keys())
+            legend.append([f"{key[0]}~{key[1]}"] + list(val.values()))
+        else:
+            x = [f"{k[0]}!{k[1]}" for k in val.keys()]
+            legend.append([key] + list(val.values()))
+
+    return x, legend
+
 
 
 def pure_freq(ss_lst):
@@ -143,8 +176,8 @@ if __name__ == "__main__":
     outer_construal_dict = nested_freq(ss_lst, outer_construal_dict, if_tok_outer=False)
 
     # generate graph
-    df_tok = preprocess_graph(outer_tok_dict, if_tok_outer=True)   # X=tok
-    draw_bar(df_tok, name="tok")
+    x, legend = preprocess_graph(outer_construal_dict, if_construal_outer=True)   # X=tok
+    draw_bar(x, legend, name="tok")
 
-    df_construal = preprocess_graph(outer_construal_dict, if_tok_outer=False)   # X=construal
-    draw_bar(df_construal, name="construal")
+    x, legend = preprocess_graph(outer_tok_dict, if_construal_outer=False)   # X=construal
+    draw_bar(x, legend, name="construal")
