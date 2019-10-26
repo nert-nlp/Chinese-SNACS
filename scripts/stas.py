@@ -13,6 +13,7 @@ import matplotlib
 from copy import deepcopy
 from pyecharts.charts import Bar
 from pyecharts import options as opts
+import pinyin
 
 
 '''
@@ -61,12 +62,19 @@ def preprocess_graph(outer_dict, if_tok_outer=True):
     return df
 '''
 
-def draw_bar(x, legends, name):
+def draw_bar(x, mid, legends, name):
     bar = Bar(init_opts={"width":"3000px","height":"600px"})
+    # bar.add_xaxis(x)
+
+    assert len(mid) == len(legends)
+
     bar.add_xaxis(x)
-    for legend in legends:
-        assert len(legend)-1 == len(x)
-        bar.add_yaxis(legend[0], legend[1:], stack="stack")
+
+
+    for j in range(len(mid)):
+        bar.add_yaxis(mid[j], legends[j], stack="stack")
+
+
 
     bar.set_global_opts(xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=18, font_size=10)), title_opts=opts.TitleOpts(title=f"X={name}"))
     bar.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
@@ -76,18 +84,34 @@ def draw_bar(x, legends, name):
     a = 1
 
 
-def preprocess_graph(outer_dict, if_construal_outer=True):
-    x = []
+def preprocess_graph(outer_dict, supplement_dict, if_construal_outer=True):
     legend = []
-    for key,val in outer_dict.items():
-        if if_construal_outer:
-            x = list(val.keys())
-            legend.append([f"{key[0]}~{key[1]}"] + list(val.values()))
-        else:
-            x = [f"{k[0]}!{k[1]}" for k in val.keys()]
-            legend.append([key] + list(val.values()))
 
-    return x, legend
+    # sort x by sum of counts
+    sorted_outer = sorted(list(outer_dict.items()), key=lambda z: sum(z[1].values()), reverse=True)
+
+    # x is for the x-axis of the bar
+    x = [z[0] for z in sorted_outer]
+
+    # mid is the category for each bar; sorted by the total counts for all outers, i.e. fixed order for each bar
+    mid = [z[0] for z in sorted(list(supplement_dict.items()), key=lambda z: sum(z[1].values()), reverse=True)]
+
+
+    # legend is a list of lists
+    for m in mid:
+        legend.append([z[1][m] for z in sorted_outer])
+
+
+    # get pinyin for the prepositions
+    if if_construal_outer:
+        x = [f"{z[0]}~{z[1]}" for z in x]
+        mid = [z+pinyin.get(z, delimiter="") for z in mid]
+    else:
+        mid = [f"{z[0]}~{z[1]}" for z in mid]
+        x = [z+pinyin.get(z, delimiter="") for z in x]
+
+
+    return x, mid, legend
 
 
 
@@ -176,8 +200,12 @@ if __name__ == "__main__":
     outer_construal_dict = nested_freq(ss_lst, outer_construal_dict, if_tok_outer=False)
 
     # generate graph
-    x, legend = preprocess_graph(outer_construal_dict, if_construal_outer=True)   # X=tok
-    draw_bar(x, legend, name="tok")
 
-    x, legend = preprocess_graph(outer_tok_dict, if_construal_outer=False)   # X=construal
-    draw_bar(x, legend, name="construal")
+
+
+    x, mid, legend = preprocess_graph(outer_construal_dict, outer_tok_dict, if_construal_outer=True)   # X=construal
+    draw_bar(x, mid, legend, name="construal")
+
+
+    x, mid, legend = preprocess_graph(outer_tok_dict, outer_construal_dict, if_construal_outer=False)   # X=tok
+    draw_bar(x, mid, legend, name="tok")
