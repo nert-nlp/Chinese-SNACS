@@ -19,8 +19,8 @@ xpos2upos_dict = {
 "FW": "X", # foreign words	A
 "IJ": "INTJ", # interjection	哈哈
 "JJ": "ADJ", # other noun-modifer	新
-"LB": "P",	# 被 in long bei-const	被
-"LC": "P", # localizer	里
+"LB": "ADP",	# 被 in long bei-const	被
+"LC": "ADP", # localizer	里
 "M": "NOUN", # measure word	个
 "MSP": "PART", # other particle	所
 "NN": "NOUN", # common noun	工作
@@ -28,7 +28,7 @@ xpos2upos_dict = {
 "NT": "NOUN", # temporal noun	目前
 "OD": "NUM", # ordinal number	第一
 "ON": "NOUN", #	onomatopoeia
-"P": "P", # Prepositions (excluding 把 and 被)	在
+"P": "ADP", # Prepositions (excluding 把 and 被)	在
 "PN": "PRON", # pronoun	我
 "PU": "PUNCT", # punctuation	标点
 "SB": "VERB",	# 被 in short bei-const	被+V
