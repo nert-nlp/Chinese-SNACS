@@ -1530,7 +1530,7 @@
 7	副	副	NOUN	M	_	6	mark:clf	_	_	_	_	_	_	_	_	_	_	_
 8	一样	一样	VERB	VA	_	11	dep	_	_	_	_	_	_	_	_	_	_	_
 9	又	又	ADV	AD	_	11	advmod	_	_	_	_	_	_	_	_	_	_	_
-10	被	被	P	SB	_	11	auxpass	_	_	_	_	_	_	_	_	_	_	_
+10	被	被	VERB	SB	_	11	auxpass	_	_	_	_	_	_	_	_	_	_	_
 11	拒绝	拒绝	VERB	VV	_	0	root	_	_	_	_	_	_	_	_	_	_	_
 12	了	了	AUX	AS	_	11	aux:asp	_	_	_	_	_	_	_	_	_	_	_
 13	。	。	PUNCT	PU	_	11	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -2597,7 +2597,7 @@
 2	颗	颗	NOUN	M	_	1	mark:clf	_	_	_	_	_	_	_	_	_	_	_
 3	小行星	小行星	NOUN	NN	_	8	nsubj	_	_	_	_	_	_	_	_	_	_	_
 4	仅仅	仅仅	ADV	AD	_	8	advmod	_	_	_	_	_	_	_	_	_	_	_
-5	被	被	P	SB	_	8	auxpass	_	_	_	_	_	_	_	_	_	_	_
+5	被	被	VERB	SB	_	8	auxpass	_	_	_	_	_	_	_	_	_	_	_
 6	用	用	P	P	_	7	case	_	_	_	_	_	p.Instrument	p.Instrument	_	_	_	_
 7	望远镜	望远镜	NOUN	NN	_	8	nmod:prep	_	_	_	_	_	_	_	_	_	_	_
 8	看见	看见	VERB	VV	_	0	root	_	_	_	_	_	_	_	_	_	_	_
@@ -4045,7 +4045,7 @@
 6	苗	苗	NOUN	NN	_	18	dep	_	_	_	_	_	_	_	_	_	_	_
 7	，	，	PUNCT	PU	_	18	punct	_	_	_	_	_	_	_	_	_	_	_
 8	一旦	一旦	SCONJ	CS	_	10	advmod	_	_	_	_	_	_	_	_	_	_	_
-9	被	被	P	SB	_	10	auxpass	_	_	_	_	_	_	_	_	_	_	_
+9	被	被	VERB	SB	_	10	auxpass	_	_	_	_	_	_	_	_	_	_	_
 10	辨认	辨认	VERB	VV	_	18	dep	_	_	_	_	_	_	_	_	_	_	_
 11	出来	出来	VERB	VV	_	10	advmod:rcomp	_	_	_	_	_	_	_	_	_	_	_
 12	，	，	PUNCT	PU	_	18	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -8655,7 +8655,7 @@
 4	了	了	AUX	AS	_	3	aux:asp	_	_	_	_	_	_	_	_	_	_	_
 5	他	他	PRON	PN	_	11	compound:nn	_	_	_	_	_	_	_	_	_	_	_
 6	那	那	DET	DT	_	11	det	_	_	_	_	_	_	_	_	_	_	_
-7	被	被	P	SB	_	8	auxpass	_	_	_	_	_	_	_	_	_	_	_
+7	被	被	VERB	SB	_	8	auxpass	_	_	_	_	_	_	_	_	_	_	_
 8	遗弃	遗弃	VERB	VV	_	11	acl	_	_	_	_	_	_	_	_	_	_	_
 9	的	的	PART	DEC	_	8	mark	_	_	_	_	_	_	_	_	_	_	_
 10	小	小	ADJ	JJ	_	11	amod	_	_	_	_	_	_	_	_	_	_	_
@@ -9004,7 +9004,7 @@
 6	命令	命令	NOUN	NN	_	10	nsubj	_	_	_	_	_	_	_	_	_	_	_
 7	一定	一定	ADV	AD	_	10	advmod	_	_	_	_	_	_	_	_	_	_	_
 8	会	会	VERB	VV	_	10	aux:modal	_	_	_	_	_	_	_	_	_	_	_
-9	被	被	P	SB	_	10	auxpass	_	_	_	_	_	_	_	_	_	_	_
+9	被	被	VERB	SB	_	10	auxpass	_	_	_	_	_	_	_	_	_	_	_
 10	服从	服从	VERB	VV	_	3	ccomp	_	_	_	_	_	_	_	_	_	_	_
 11	的	的	PART	SP	_	10	discourse	_	_	_	_	_	_	_	_	_	_	_
 12	。	。	PUNCT	PU	_	3	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -9410,7 +9410,7 @@
 13	每	每	DET	DT	_	15	dep	_	_	_	_	_	_	_	_	_	_	_
 14	次	次	NOUN	M	_	13	mark:clf	_	_	_	_	_	_	_	_	_	_	_
 15	判刑	判刑	VERB	VV	_	19	advcl:loc	_	_	_	_	_	_	_	_	_	_	_
-16	后	后	P	LC	_	15	case	_	_	_	_	_	_	_	_	_	_	_
+16	后	后	P	LC	_	15	case	_	_	_	_	_	p.Time	p.Time	_	_	_	_
 17	都	都	ADV	AD	_	19	advmod	_	_	_	_	_	_	_	_	_	_	_
 18	要	要	VERB	VV	_	19	xcomp	_	_	_	_	_	_	_	_	_	_	_
 19	赦免	赦免	VERB	VV	_	8	conj	_	_	_	_	_	_	_	_	_	_	_
@@ -10602,7 +10602,7 @@
 18	以来	以来	P	LC	_	16	case	_	_	_	_	_	p.Duration	p.Duration	_	_	_	_
 19	，	，	PUNCT	PU	_	22	punct	_	_	_	_	_	_	_	_	_	_	_
 20	只	只	ADV	AD	_	22	advmod	_	_	_	_	_	_	_	_	_	_	_
-21	被	被	P	SB	_	22	auxpass	_	_	_	_	_	_	_	_	_	_	_
+21	被	被	VERB	SB	_	22	auxpass	_	_	_	_	_	_	_	_	_	_	_
 22	打搅	打搅	VERB	VV	_	7	ccomp	_	_	_	_	_	_	_	_	_	_	_
 23	过	过	AUX	AS	_	22	aux:asp	_	_	_	_	_	_	_	_	_	_	_
 24	三	三	NUM	CD	_	22	dep	_	_	_	_	_	_	_	_	_	_	_
@@ -16203,7 +16203,7 @@
 15	我	我	PRON	PN	_	19	nsubj	_	_	_	_	_	_	_	_	_	_	_
 16	还	还	ADV	AD	_	19	advmod	_	_	_	_	_	_	_	_	_	_	_
 17	没有	没有	ADV	AD	_	19	neg	_	_	_	_	_	_	_	_	_	_	_
-18	被	被	P	SB	_	19	auxpass	_	_	_	_	_	_	_	_	_	_	_
+18	被	被	VERB	SB	_	19	auxpass	_	_	_	_	_	_	_	_	_	_	_
 19	驯服	驯服	VERB	VV	_	12	ccomp	_	_	_	_	_	_	_	_	_	_	_
 20	呢	呢	PART	SP	_	19	discourse	_	_	_	_	_	_	_	_	_	_	_
 21	。	。	PUNCT	PU	_	12	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -17015,7 +17015,7 @@
 # text = “只有被驯服了的事物，才会被了解，”狐狸说，“人不会再有时间去了解任何东西的。
 1	“	“	PUNCT	PU	_	12	punct	_	_	_	_	_	_	_	_	_	_	_
 2	只有	只有	ADV	AD	_	4	advmod	_	_	_	_	_	_	_	_	_	_	_
-3	被	被	P	SB	_	4	auxpass	_	_	_	_	_	_	_	_	_	_	_
+3	被	被	VERB	SB	_	4	auxpass	_	_	_	_	_	_	_	_	_	_	_
 4	驯服	驯服	VERB	VV	_	7	acl	_	_	_	_	_	_	_	_	_	_	_
 5	了	了	AUX	AS	_	4	aux:asp	_	_	_	_	_	_	_	_	_	_	_
 6	的	的	PART	DEC	_	4	mark	_	_	_	_	_	_	_	_	_	_	_
@@ -17023,7 +17023,7 @@
 8	，	，	PUNCT	PU	_	12	punct	_	_	_	_	_	_	_	_	_	_	_
 9	才	才	ADV	AD	_	12	advmod	_	_	_	_	_	_	_	_	_	_	_
 10	会	会	VERB	VV	_	12	aux:modal	_	_	_	_	_	_	_	_	_	_	_
-11	被	被	P	SB	_	12	auxpass	_	_	_	_	_	_	_	_	_	_	_
+11	被	被	VERB	SB	_	12	auxpass	_	_	_	_	_	_	_	_	_	_	_
 12	了解	了解	VERB	VV	_	16	dep	_	_	_	_	_	_	_	_	_	_	_
 13	，	，	PUNCT	PU	_	16	punct	_	_	_	_	_	_	_	_	_	_	_
 14	”	”	PUNCT	PU	_	16	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -17881,7 +17881,7 @@
 12	为了	为了	P	P	_	13	case	_	_	_	_	_	p.Purpose	p.Purpose	_	_	_	_
 13	变	变	VERB	VV	_	19	nmod:prep	_	_	_	_	_	_	_	_	_	_	_
 14	蝴蝶	蝴蝶	NOUN	NN	_	13	dobj	_	_	_	_	_	_	_	_	_	_	_
-15	而外	而外	P	LC	_	13	case	_	_	_	_	_	_	_	_	_	_	_
+15	而外	而外	P	LC	_	13	case	_	_	_	_	_	p.PartPortion	p.PartPortion	_	_	_	_
 16	）	）	PUNCT	PU	_	13	punct	_	_	_	_	_	_	_	_	_	_	_
 17	是	是	VERB	VC	_	19	cop	_	_	_	_	_	_	_	_	_	_	_
 18	我	我	PRON	PN	_	19	nsubj	_	_	_	_	_	_	_	_	_	_	_
@@ -18826,7 +18826,7 @@
 # text = “只有被驯服了的事物，才会被了解，”狐狸说，“人不会再有时间去了解任何东西的。
 1	“	“	PUNCT	PU	_	12	punct	_	_	_	_	_	_	_	_	_	_	_
 2	只有	只有	ADV	AD	_	4	advmod	_	_	_	_	_	_	_	_	_	_	_
-3	被	被	P	SB	_	4	auxpass	_	_	_	_	_	_	_	_	_	_	_
+3	被	被	VERB	SB	_	4	auxpass	_	_	_	_	_	_	_	_	_	_	_
 4	驯服	驯服	VERB	VV	_	7	acl	_	_	_	_	_	_	_	_	_	_	_
 5	了	了	AUX	AS	_	4	aux:asp	_	_	_	_	_	_	_	_	_	_	_
 6	的	的	PART	DEC	_	4	mark	_	_	_	_	_	_	_	_	_	_	_
@@ -18834,7 +18834,7 @@
 8	，	，	PUNCT	PU	_	12	punct	_	_	_	_	_	_	_	_	_	_	_
 9	才	才	ADV	AD	_	12	advmod	_	_	_	_	_	_	_	_	_	_	_
 10	会	会	VERB	VV	_	12	aux:modal	_	_	_	_	_	_	_	_	_	_	_
-11	被	被	P	SB	_	12	auxpass	_	_	_	_	_	_	_	_	_	_	_
+11	被	被	VERB	SB	_	12	auxpass	_	_	_	_	_	_	_	_	_	_	_
 12	了解	了解	VERB	VV	_	16	dep	_	_	_	_	_	_	_	_	_	_	_
 13	，	，	PUNCT	PU	_	16	punct	_	_	_	_	_	_	_	_	_	_	_
 14	”	”	PUNCT	PU	_	16	punct	_	_	_	_	_	_	_	_	_	_	_
@@ -22051,7 +22051,7 @@
 7	象	象	P	P	_	19	case	_	_	_	_	_	p.ComparisonRef	p.ComparisonRef	_	_	_	_
 8	一	一	NUM	CD	_	19	nummod	_	_	_	_	_	_	_	_	_	_	_
 9	只	只	NOUN	M	_	8	mark:clf	_	_	_	_	_	_	_	_	_	_	_
-10	被	被	P	LB	_	12	auxpass	_	_	_	_	_	_	_	_	_	_	_
+10	被	被	P	LB	_	12	auxpass	_	_	_	_	_	p.Agent	p.Agent	_	_	_	_
 11	枪弹	枪弹	NOUN	NN	_	12	nsubj	_	_	_	_	_	_	_	_	_	_	_
 12	击中	击中	VERB	VV	_	19	acl	_	_	_	_	_	_	_	_	_	_	_
 13	而	而	PART	MSP	_	12	cc	_	_	_	_	_	_	_	_	_	_	_

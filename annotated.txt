@@ -538,7 +538,7 @@ X 。
 夜 里:Time~Duration ， 我 听见 它 的 声音 。
 你 可以 审判 它 ， 不时 地 判处 它 死刑 。
 因此 它 的 生命 取决 于:Circumstance 你 的 判决 。
-可是 ， 你 要 有 节制 地 使用 这 只 耗子 ， 每 次 判刑 后 都 要 赦免 它 ， 因为:Explanation 只 有 这 一 只 耗子 。 ”
+可是 ， 你 要 有 节制 地 使用 这 只 耗子 ， 每 次 判刑 后:Time 都 要 赦免 它 ， 因为:Explanation 只 有 这 一 只 耗子 。 ”
 “ 可是 我 不 愿 判 死刑 ， ” 小王子 回答 道 。
 我 想 我 还是 应该 走 。 ”
 “ 不 行 ， ” 国王 说 。
@@ -1082,7 +1082,7 @@ XXI 。
 可是 ， 她 单独 一 朵 就 比:ComparisonRef 你们 全体 更 重要 ， 因为:Explanation 她 是 我 浇灌 的 。
 因为:Explanation 她 是 我 放 在:Locus 花罩 中:Locus 的 。
 因为:Explanation 她 是 我 用:Instrument 屏风 保护 起来 的 。
-因为:Explanation 她 身上 的 毛虫 （ 除了:PartPortion 留下 两 三 只 为了:Purpose 变 蝴蝶 而外 ） 是 我 除灭 的 。
+因为:Explanation 她 身上 的 毛虫 （ 除了:PartPortion 留下 两 三 只 为了:Purpose 变 蝴蝶 而外:PartPortion ） 是 我 除灭 的 。
 因为:Explanation 我 倾听 过 她 的 怨艾 和 自诩 ， 甚至 有时 我 聆听 着 她 的 沉默 。
 因为:Explanation 她 是 我 的 玫瑰 。 ”
 他 又 回到 了 狐狸 身边 。
@@ -1336,7 +1336,7 @@ XXVI 。
 我 用:Instrument 水 渍湿 了 他 的 太阳穴 ， 让 他 喝 了 点 水 。
 这时 ， 我 什么 也 不 敢 再 问 他 。
 他 严肃 地 看 着 我 ， 用:Instrument 双臂 搂 着 我 的 脖子 。
-我 感到 他 的 心 就 象:ComparisonRef 一 只 被 枪弹 击中 而 濒于 死亡 的 鸟 的 心脏 一样 在 跳动 着 。
+我 感到 他 的 心 就 象:ComparisonRef 一 只 被:Agent 枪弹 击中 而 濒于 死亡 的 鸟 的 心脏 一样 在 跳动 着 。
 他 对:Recipient~Direction 我 说 ： “ 我 很 高兴 ， 你 找到 了 你 的 机器 所 缺少 的 东西 。
 你 不久 就 可以 回家 去 了 … ”
 “ 你 怎么 知道 的 ？ ”

@@ -31,7 +31,7 @@ xpos2upos_dict = {
 "P": "P", # Prepositions (excluding 把 and 被)	在
 "PN": "PRON", # pronoun	我
 "PU": "PUNCT", # punctuation	标点
-"SB": "P",	# 被 in short bei-const	被
+"SB": "VERB",	# 被 in short bei-const	被+V
 "SP": "PART", # sentence-final particle	吗
 "VA": "VERB", #	predicative adjective	好
 "VC": "VERB", #		copula	是
