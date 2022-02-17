@@ -7,4 +7,6 @@
 
 # Training stanza UD1 parser based on CoreNLP-converted OntoNotes Chinese PTB trees
 
-java -mx1024m -cp "*:" edu.stanford.nlp.trees.international.pennchinese.ChineseGrammaticalStructure -treeFile __parse_file__ -basic -conllx
+java -mx1024m -cp "\*:" edu.stanford.nlp.trees.international.pennchinese.ChineseGrammaticalStructure -treeFile __parse_file__ -basic -conllx
+
+udapy -s ud.Convert1to2 < gum_zh_academic_aging.conllu > gum_zh_academic_aging.conllu2
