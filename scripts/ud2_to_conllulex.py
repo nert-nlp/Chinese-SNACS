@@ -40,20 +40,13 @@ xpos2upos_dict = {
 "X": "X", # numbers and units, mathematical sign	59mm
 }
 
-def read_file(annotated_path, plain_path):
+def read_file(annotated_path):
     index_lsts = []
     sents = []
-    with io.open(plain_path, encoding="utf8") as f:
-        plains = f.read().strip().split("\n")
     with io.open(annotated_path, encoding="utf8") as f:
-        # plain_sent_id = 0
-        
         for line in f.readlines():
             if line == "\n":
                 continue
-            ## remove chapter lines
-            # elif line.startswith("X") or line.startswith("I"):
-            #     continue
             else:
                 toks = []
                 index_lst = []
@@ -68,17 +61,17 @@ def read_file(annotated_path, plain_path):
                 assert len(toks) == len(index_lst)
                 annotated_toks = " ".join(toks)
                 
-                # if re.sub(r'\s+', '', annotated_toks) != re.sub(r'\s+', '', plains[plain_sent_id]):
-                #     print(plain_sent_id, "annotated: ", annotated_toks, "plain: ", plains[plain_sent_id], sep="\n")
-                # assert re.sub(r'\s+', '', annotated_toks) == re.sub(r'\s+', '', plains[plain_sent_id])
-                # plain_sent_id += 1
-                
                 sents.append(annotated_toks)
                 index_lsts.append(index_lst)
                 
                 # assert len(sents.split()) == len(index_lst)
     return sents, index_lsts
 
+def read_amr_plain(amr_plain_path):
+    with io.open(amr_plain_path, "r", encoding="utf8") as f:
+        lines = f.read().strip().split("\n")
+    english_lines = [x.replace("# ::zh ", "") for x in lines if "# ::zh " in x]
+    return english_lines
 
 # This function fixes the
 def generate_construal(ss):
@@ -101,9 +94,13 @@ def parse_conllu(text):
     # nlp = stanza.Pipeline("zh", processors='tokenize,pos,lemma,depparse', tokenize_pretokenized=True, tokenize_no_ssplit=True)
     ### nlp = stanza.Pipeline(processors='tokenize,pos,lemma,depparse', lang='zh', tokenize_pretokenized=True, use_gpu=True, pos_batch_size=3000)
     conllus = []
+    chapter_initial = []
     for sid, sentence in enumerate(text):
         # if sid > 10:
         #     continue
+        chapter_initial.append(True if re.match("^[IVX。 ]+$", sentence) else False)
+        
+        # Stanza parse UD
         doc = nlp(sentence) # Run the pipeline on input text
         dicts = doc.to_dict()
         conllu = CoNLL.convert_dict(dicts)
@@ -113,17 +110,20 @@ def parse_conllu(text):
         conllu = "\n".join(['\t'.join(x) for x in conllu[0]])
         conllus.append(conllu)
         print('o Done parsing sentence %d/%d' % (sid, len(text)), end="\r")
-    return conllus
+
+    assert sum(chapter_initial) == 27
+    return conllus, chapter_initial
 
 
-def parse_conllulex(conllus, supersenses):
+def parse_conllulex(conllus, supersenses, chapter_initial, english_lines):
     """
     conllu: text file in conllu form
     supersense: A list of supersense annotations for each token, 0
     """
-    assert len(supersenses) == len(conllus)
-    conllulex = "# newdoc_id = lpp_zh\n"
+    assert len(supersenses) == len(conllus) == len(chapter_initial) == len(english_lines)
+    conllulex = ""
     
+    chapter_no = 1
     for sent_id in range(len(conllus)):
         toks = conllus[sent_id].split("\n")
         assert len(toks) == len(supersenses[sent_id])
@@ -136,19 +136,19 @@ def parse_conllulex(conllus, supersenses):
             else:
                 scene, function = ['_', '_']
             toks[tok_id] += '\t_' * 3 + '\t%s\t%s' % (scene, function) + '\t_' * 4
-        conllulex += "# sent_id = lpp_zh-%d\n# text = %s\n" % (sent_id+1, text_field) + "\n".join(toks) + "\n\n"
-    return conllulex
+        return conllulex
 
 
 if __name__ == "__main__":
-    PLAIN_PATH = ".." + os.sep + "plain.txt"
+    AMR_PLAIN_PATH = ".." + os.sep + "amr_plain.txt"
     ANNOTATED_PATH = ".." + os.sep + "annotated.txt"
     OUT_PATH = ".." + os.sep + "out.conllulex"
 
-    sents, index_lst = read_file(annotated_path=ANNOTATED_PATH, plain_path=PLAIN_PATH)
-    conll_string = parse_conllu(sents)
+    sents, index_lst = read_file(annotated_path=ANNOTATED_PATH)
+    english_lines = read_amr_plain(AMR_PLAIN_PATH)
+    conll_string, chapter_initial = parse_conllu(sents)
     index_lst = index_lst[:len(conll_string)]
-    conllulex_string = parse_conllulex(conll_string, index_lst)
+    conllulex_string = parse_conllulex(conll_string, index_lst, chapter_initial, english_lines)
 
     write_f = open(OUT_PATH, "w", encoding="utf8")
     write_f.write(conllulex_string)
