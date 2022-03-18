@@ -44,16 +44,16 @@ def parse_conllu(text, english_lines):
         if chapter_initials[sent_id]:
             conllu_string += "# newdoc_id = lpp_1943_zh_ch-%.2d\n" % chapter_no
             chapter_no += 1
-        conllu_string += "# sent_id = lpp_1943_zh-%d\n# text = %s\n# en_text = %s\n" % (
-        sent_id + 1, text_fields[sent_id], english_lines[sent_id]) + conllus[sent_id] + "\n\n"
+        conllu_string += "# sent_id = lpp_1943_zh-%d\n# text = %s\n# en_sent_id = lpp_1943.%d\n# en_text = %s\n" % (
+        sent_id + 1, text_fields[sent_id], sent_id + 1, english_lines[sent_id]) + conllus[sent_id] + "\n\n"
 
     return conllu_string
 
 
 if __name__ == "__main__":
     AMR_PLAIN_PATH = ".." + os.sep + "amr_plain.txt"
-    ANNOTATED_PATH = ".." + os.sep + "annotated.txt"
-    OUT_PATH = ".." + os.sep + "snacs_stanza_new.conllu1"
+    ANNOTATED_PATH = ".." + os.sep + "snacs_annotated.txt"
+    OUT_PATH = ".." + os.sep + "snacs_stanza.conllu1"
 
     sents, index_lst = read_annotated_file(annotated_path=ANNOTATED_PATH)
     english_lines = read_amr_plain(AMR_PLAIN_PATH)

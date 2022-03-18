@@ -21,7 +21,7 @@ xpos2lexcat_dict = {
 "LB": "LB",	# 被 in long bei-const	被
 "LC": "LC", # localizer	里
 "M": "N", # measure word	个
-"MSP": "MSP", # other particle	所
+"MSP": "PART", # other particle	所
 "NN": "N", # common noun	工作
 "NR": "N", # proper noun	中国
 "NT": "N", # temporal noun	目前
@@ -126,3 +126,18 @@ def read_zh2en_alignment_file(alignment_file):
     with io.open(alignment_file, "r", encoding="utf8") as f:
         zh2en_alignments = [x.split("\t") for x in f.read().strip().split("\n") if "\t" in x]
     return zh2en_alignments
+
+def read_meta_n_conllu_strings(conllu_path):
+    meta_strings = []
+    conllu_strings = []
+    with io.open(conllu_path, "r", encoding="utf8") as f:
+        chunks = f.read().strip().split("\n\n")
+    
+    for chunk in chunks:
+        lines = chunk.strip().split("\n")
+        meta_strings.append("\n".join([x for x in lines if "\t" not in x]))
+        conllu_strings.append("\n".join([x for x in lines if "\t" in x]))
+    
+    return meta_strings, conllu_strings
+
+
