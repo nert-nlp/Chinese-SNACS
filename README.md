@@ -21,10 +21,10 @@ Adposition supersense annotations are based on English supersense guidelines (ht
 
 ### Step 2: use udapi to convert UD v1 to UD v2
 
-(if udapi not installed) 
+if udapi not installed
 > pip install udapi
 
-(back to Chinese_SNACS main directory) 
+back to Chinese_SNACS main directory
 > cd ../
 
 > udapy -s ud.Convert1to2 < snacs_stanza.conllu1 > snacs_stanza.conllu2
