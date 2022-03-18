@@ -122,3 +122,7 @@ def generate_construal(ss):
         function = scene
     return scene, function
 
+def read_zh2en_alignment_file(alignment_file):
+    with io.open(alignment_file, "r", encoding="utf8") as f:
+        zh2en_alignments = [x.split("\t") for x in f.read().strip().split("\n") if "\t" in x]
+    return zh2en_alignments

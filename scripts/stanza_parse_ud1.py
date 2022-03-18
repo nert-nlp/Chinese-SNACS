@@ -53,7 +53,7 @@ def parse_conllu(text, english_lines):
 if __name__ == "__main__":
     AMR_PLAIN_PATH = ".." + os.sep + "amr_plain.txt"
     ANNOTATED_PATH = ".." + os.sep + "annotated.txt"
-    OUT_PATH = ".." + os.sep + "snacs_stanza.conllu1"
+    OUT_PATH = ".." + os.sep + "snacs_stanza_new.conllu1"
 
     sents, index_lst = read_annotated_file(annotated_path=ANNOTATED_PATH)
     english_lines = read_amr_plain(AMR_PLAIN_PATH)
