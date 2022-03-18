@@ -4,8 +4,8 @@ This corpus annotates adposition supersenses for the Mandarin Chinese translatio
 Adposition supersense annotations are based on English supersense guidelines (https://arxiv.org/abs/1704.02134) and source Chinese-English bitext is obtained from the AMR project (https://amr.isi.edu/download/amr-bank-struct-v1.6.txt).
 
 ## Data are stored in the following files:
-- *snacs_annotated.txt*: plain text file with *TOKEN:SCENE\~FUNCTION* annotations
-- *snacs_stanza.conllulex*: 20-column extended conllu file with stanza-parsed and udapy converted dependencies and supersense annotations in the 14th, 15th columns
+- ***snacs_annotated.txt***: plain text file with *TOKEN:SCENE\~FUNCTION* annotations
+- ***snacs_stanza.conllulex***: 20-column extended conllu file with stanza-parsed and udapy converted dependencies and supersense annotations in the 14th, 15th columns
 - cf. conllulex validation (https://github.com/nert-nlp/conllulex)
 
 
