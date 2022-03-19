@@ -70,8 +70,8 @@ back to Chinese_SNACS main directory
 
 ## Annotation Contributors:
 
-- Adposition annotations: Yang (Janet) Liu, Yilun Zhu, Siyao (Logan) Peng
-- Chinese-English alignments: Wai Ching Leung, Yifu Mu
+- Adposition annotations and analyses: Yang (Janet) Liu, Yilun Zhu, Siyao (Logan) Peng, Yushi Zhao, Austin Blodgett; supervised by Nathan Schneider
+- Chinese-English adposition alignments: Wai Ching Leung, Yifu Mu; coordinated by Siyao (Logan) Peng and supervised by Nathan Schneider
 
 
 ## References
