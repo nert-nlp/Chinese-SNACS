@@ -1,7 +1,9 @@
 # Chinese-SNACS
 
 This corpus annotates adposition supersenses for the Mandarin Chinese translation of the Little Prince (小王子).
-Adposition supersense annotations are based on English supersense guidelines (https://arxiv.org/abs/1704.02134) and source Chinese-English bitext is obtained from the AMR project (https://amr.isi.edu/download/amr-bank-struct-v1.6.txt).
+Adposition supersense annotations are based on English supersense guidelines v2.5 (https://arxiv.org/abs/1704.02134) and source Chinese-English bitext is obtained from the AMR project (https://amr.isi.edu/download/amr-bank-struct-v1.6.txt).
+
+The corpus contains all 27 chapters of *The Little Prince*, with a total of 1562 sentences, 19799 tokens, and 937 adposition targets. 
 
 ## Data are stored in the following files:
 - ***snacs_annotated.txt***: plain text file with *TOKEN:SCENE\~FUNCTION* annotations
@@ -17,7 +19,7 @@ Adposition supersense annotations are based on English supersense guidelines (ht
 > python stanza_parse_ud1.py
 
 - stanza-parsed UDv1 output file: *snacs_stanza.conllu1*
-- contact sp1184@georgetown.edu for pretrained Chinese OntoNotes stanza models
+- pretrained Chinese OntoNotes stanza models can be downloaded here: https://drive.google.com/drive/folders/14439AS7xeKAInpk3XDfZdqLgHDRIHI15?usp=sharing
 
 ### Step 2: use udapi to convert UD v1 to UD v2
 
@@ -65,3 +67,35 @@ back to Chinese_SNACS main directory
 - SCONJ: subordinating conjunction, e.g. 虽然
 - X: other part-of-speech, e.g. mathematical sign, foreign words
 
+
+## Annotation Contributors:
+
+- Adposition annotations: Yang (Janet) Liu, Yilun Zhu, Siyao (Logan) Peng
+- Chinese-English alignments: Wai Ching Leung, Yifu Mu
+
+
+## References
+
+Please cite:
+
+```
+@inproceedings{peng-etal-2020-corpus,
+    title = "A Corpus of Adpositional Supersenses for {M}andarin {C}hinese",
+    author = "Peng, Siyao  and
+      Liu, Yang  and
+      Zhu, Yilun  and
+      Blodgett, Austin  and
+      Zhao, Yushi  and
+      Schneider, Nathan",
+    booktitle = "Proceedings of the 12th Language Resources and Evaluation Conference",
+    month = may,
+    year = "2020",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2020.lrec-1.733",
+    pages = "5986--5994",
+    abstract = "Adpositions are frequent markers of semantic relations, but they are highly ambiguous and vary significantly from language to language. Moreover, there is a dearth of annotated corpora for investigating the cross-linguistic variation of adposition semantics, or for building multilingual disambiguation systems. This paper presents a corpus in which all adpositions have been semantically annotated in Mandarin Chinese; to the best of our knowledge, this is the first Chinese corpus to be broadly annotated with adposition semantics. Our approach adapts a framework that defined a general set of supersenses according to ostensibly language-independent semantic criteria, though its development focused primarily on English prepositions (Schneider et al., 2018). We find that the supersense categories are well-suited to Chinese adpositions despite syntactic differences from English. On a Mandarin translation of The Little Prince, we achieve high inter-annotator agreement and analyze semantic correspondences of adposition tokens in bitext.",
+    language = "English",
+    ISBN = "979-10-95546-34-4",
+}
+```
